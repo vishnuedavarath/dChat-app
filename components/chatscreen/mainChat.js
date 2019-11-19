@@ -13,7 +13,7 @@ export default class ChatView extends React.Component {
         {
           _id: 1,
           text:
-            "I think we passed the first step of the tutorial. We will now need a Pusher account!",
+            "Hi",
           createdAt: new Date(),
           user: {
             _id: 1,
@@ -32,6 +32,9 @@ export default class ChatView extends React.Component {
           messages={this.state.messages}
           alwaysShowSend={true}
           isAnimated={true}
+          user={{
+              _id: this.user_id
+            }}
         />
         <KeyboardAvoidingView behavior="padding" />
       </View>

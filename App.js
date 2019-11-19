@@ -3,7 +3,7 @@ import { Platform, StyleSheet, Text, View } from "react-native";
 
 import SignupView from "./components/signup/mainSignup";
 import ChatView from "./components/chatscreen/mainChat";
-import MsgView from "./components/msgscreen/mainMsgScreen";
+// import MsgView from "./components/msgscreen/mainMsgScreen";
 
 const instructions = Platform.select({
   ios: "Press Cmd+R to reload,\n" + "Cmd+D or shake for dev menu",
@@ -17,8 +17,8 @@ export default class App extends Component {
     return (
       <View style={styles.container}>
         {/* < SignupView /> */}
-        {/* <ChatView /> */}
-        <MsgView />
+        <ChatView />
+        {/* <MsgView /> */}
       </View>
     );
   }
