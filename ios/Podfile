@@ -32,4 +32,13 @@ target 'dChat' do
 
   use_unimodules!
 
+  pod 'react-native-camera', :path => '../node_modules/react-native-camera'
+
+  pod 'RNFastImage', :path => '../node_modules/react-native-fast-image'
+
+  pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
+
+
+  pod 'RNPermissions', :path => '../node_modules/react-native-permissions'
+
 end

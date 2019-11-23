@@ -1,7 +1,16 @@
 import React from "react";
 import { GiftedChat } from "react-native-gifted-chat";
 import { View, KeyboardAvoidingView } from "react-native";
-import { Header } from "react-native-elements";
+// import { Header } from "react-native-elements";
+import {
+    Header,
+    Left,
+    Body,
+    Right,
+    Button,
+    Icon,
+    Title
+} from "native-base";
 
 export default class ChatView extends React.Component {
     state = {
@@ -29,14 +38,21 @@ export default class ChatView extends React.Component {
     render() {
         return (
             <View style={{ flex: 1 }}>
-                <Header
-                    //   leftComponent={{ icon: "menu", color: "#fff" }}
-                    leftComponent={{
-                        text: this.state.user.name,
-                        style: { color: "#fff" }
-                    }}
-                    rightComponent={{ icon: "more-vert", color: "#fff" }}
-                />
+                <Header style = {{brandPrimary : "#000"}}>
+                    <Left>
+                        <Button transparent>
+                            <Icon name="arrow-back" />
+                        </Button>
+                    </Left>
+                    <Body>
+                        <Title> {this.state.user} </Title>
+                    </Body>
+                    <Right>
+                        <Button transparent>
+                            <Icon name="more" />
+                        </Button>
+                    </Right>
+                </Header>
                 <GiftedChat
                     messages={this.state.messages}
                     alwaysShowSend={true}
