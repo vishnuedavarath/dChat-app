@@ -1,5 +1,17 @@
 import React, { Component } from "react";
-import { Container, Header, Content, Input, Item, Left, Body, Title, Button, Icon } from "native-base";
+import {
+    Container,
+    Header,
+    Content,
+    Input,
+    Item,
+    Left,
+    Body,
+    Title,
+    Button,
+    Icon
+} from "native-base";
+import ResultView from "./resultSearch";
 export default class SearchScreen extends Component {
     render() {
         return (
@@ -23,6 +35,7 @@ export default class SearchScreen extends Component {
                     <Item regular>
                         <Input placeholder="Search User" />
                     </Item>
+                    <ResultView />
                 </Content>
             </Container>
         );

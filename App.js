@@ -1,9 +1,15 @@
 import React, { Component } from "react";
 import { Platform, StyleSheet, View, StatusBar } from "react-native";
 import { AppLoading } from "expo";
+import { createAppContainer } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation-stack';
+
+
 import getTheme from "./native-base-theme/components";
 import material from "./native-base-theme/variables/material";
 import { StyleProvider } from "native-base";
+
+import AppNavigator from './AppNavigator';
 
 import SignupView from "./components/signup/mainSignup";
 import ChatView from "./components/chatscreen/mainChat";
@@ -43,11 +49,13 @@ export default class App extends Component {
         return (
             <View style={styles.container}>
                 <StyleProvider style={getTheme(material)}>
-                    {/* < SignupView /> */}
+                    < SignupView />
                     {/* <ChatView /> */}
                     {/* <MsgView /> */}
-                    <SearchScreen />
+                    {/* <SearchScreen /> */}
+                    <AppNavigator />
                 </StyleProvider>
+
             </View>
         );
     }

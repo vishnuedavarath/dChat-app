@@ -20,7 +20,7 @@ export default class SignupView extends Component {
     }
 
     onClickListener = viewId => {
-        Alert.alert("Alert", "Button pressed " + viewId);
+        this.props.navigation.navigate('Friends');
     };
 
     render() {
@@ -48,13 +48,13 @@ export default class SignupView extends Component {
                         style={styles.inputIcon}
                         source={{
                             uri:
-                                "https://img.icons8.com/ultraviolet/40/000000/key.png"
+                                "https://img.icons8.com/ultraviolet/40/000000/employee-card.png"
                         }}
                     />
                     <TextInput
                         style={styles.inputs}
-                        placeholder="Password"
-                        secureTextEntry={true}
+                        placeholder="Username"
+                        keyboardType="default"
                         underlineColorAndroid="transparent"
                         onChangeText={password => this.setState({ password })}
                     />
