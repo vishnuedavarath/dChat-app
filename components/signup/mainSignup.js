@@ -19,8 +19,8 @@ export default class SignupView extends Component {
         };
     }
 
-    onClickListener = viewId => {
-        this.props.navigation.navigate('Friends');
+    onClickListener = () => {
+        this.props.navigation.navigate('Messages');
     };
 
     render() {

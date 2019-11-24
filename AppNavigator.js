@@ -11,6 +11,11 @@ const AppNavigator = createStackNavigator({
     Messages: { screen: MsgView },
     ChatScreen: { screen: ChatView },
     Search: { screen: SearchScreen }
-});
+},
+    {
+        // initialRouteName: 'Login',
+        headerMode: 'none'
+    }
+);
 
 export default createAppContainer(AppNavigator);

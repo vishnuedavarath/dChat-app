@@ -38,9 +38,9 @@ export default class ChatView extends React.Component {
     render() {
         return (
             <View style={{ flex: 1 }}>
-                <Header style = {{brandPrimary : "#000"}}>
+                <Header style={{ brandPrimary: "#000" }}>
                     <Left>
-                        <Button transparent>
+                        <Button transparent onPress={() => this.props.navigation.goBack()}>
                             <Icon name="arrow-back" />
                         </Button>
                     </Left>
@@ -48,7 +48,7 @@ export default class ChatView extends React.Component {
                         <Title> {this.state.user} </Title>
                     </Body>
                     <Right>
-                        <Button transparent>
+                        <Button transparent >
                             <Icon name="more" />
                         </Button>
                     </Right>
