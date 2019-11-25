@@ -61,7 +61,7 @@ export default class ChatView extends React.Component {
                         _id: this.user_id
                     }}
                 />
-                <KeyboardAvoidingView behavior="padding" />
+                <KeyboardAvoidingView behavior="padding" keyboardVerticalOffset = {25} />
             </View>
         );
     }

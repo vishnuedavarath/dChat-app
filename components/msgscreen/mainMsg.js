@@ -19,10 +19,21 @@ import {
 } from "native-base";
 
 export default class mainMsgScreen extends Component {
+    constructor(){
+        super();
+        state = {}
+
+        // this.onClickListener =  this.onClickListener.bind(this);
+
+    }
 
     onClickListener = () => {
         this.props.navigation.navigate('ChatScreen');
     }
+    // componentWillMount{
+    //     // load previous messages from storage
+
+    // }
     render() {
         return (
             <Container>
