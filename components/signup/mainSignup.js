@@ -20,6 +20,9 @@ export default class SignupView extends Component {
     }
 
     onClickListener = () => {
+        // request to nameserver
+        // returns whether username exists
+        // if don't exist, navigate 
         this.props.navigation.navigate('Messages');
     };
 
