@@ -1,32 +1,36 @@
 package com.dchat;
 
 import android.app.Application;
-
-import com.facebook.react.ReactApplication;
-import com.reactnativecommunity.rnpermissions.RNPermissionsPackage;
-import com.oblador.vectoricons.VectorIconsPackage;
+import com.dchat.generated.BasePackageList;
 import com.dylanvann.fastimage.FastImageViewPackage;
-import org.reactnative.camera.RNCameraPackage;
+import com.facebook.react.ReactApplication;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
 import com.facebook.soloader.SoLoader;
-import com.dchat.generated.BasePackageList;
+import com.oblador.vectoricons.VectorIconsPackage;
+import com.reactnativecommunity.rnpermissions.RNPermissionsPackage;
+import com.sha256lib.Sha256Package;
+import com.stonem.sockets.SocketsPackage;
+import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
 import com.swmansion.reanimated.ReanimatedPackage;
 import com.swmansion.rnscreens.RNScreensPackage;
-import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
-
-import org.unimodules.adapters.react.ReactAdapterPackage;
+import expo.modules.constants.ConstantsPackage;
+import expo.modules.filesystem.FileSystemPackage;
+import expo.modules.permissions.PermissionsPackage;
+import java.util.Arrays;
+import java.util.List;
+import org.pgsqlite.SQLitePluginPackage;
+import org.reactnative.camera.RNCameraPackage;
 import org.unimodules.adapters.react.ModuleRegistryAdapter;
+import org.unimodules.adapters.react.ReactAdapterPackage;
 import org.unimodules.adapters.react.ReactModuleRegistryProvider;
 import org.unimodules.core.interfaces.Package;
 import org.unimodules.core.interfaces.SingletonModule;
-import expo.modules.constants.ConstantsPackage;
-import expo.modules.permissions.PermissionsPackage;
-import expo.modules.filesystem.FileSystemPackage;
+import com.stonem.sockets.SocketsPackage;
 
-import java.util.Arrays;
-import java.util.List;
+
+
 
 public class MainApplication extends Application implements ReactApplication {
   private final ReactModuleRegistryProvider mModuleRegistryProvider = new ReactModuleRegistryProvider(
@@ -43,11 +47,15 @@ public class MainApplication extends Application implements ReactApplication {
     @Override
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
+          new SQLitePluginPackage(),
           new MainReactPackage(),
+            new Sha256Package(),
+            new SocketsPackage(),
             new RNPermissionsPackage(),
             new VectorIconsPackage(),
             new FastImageViewPackage(),
             new RNCameraPackage(),
+            new SocketsPackage(),
           new ReanimatedPackage(),
           new RNGestureHandlerPackage(),
           new RNScreensPackage(),

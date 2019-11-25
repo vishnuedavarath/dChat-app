@@ -3,6 +3,7 @@ import { Platform, StyleSheet, View, StatusBar } from "react-native";
 import { AppLoading } from "expo";
 import { createAppContainer } from 'react-navigation';
 // import { createStackNavigator } from 'react-navigation-stack';
+import Sockets from 'react-native-sockets';
 
 
 import getTheme from "./native-base-theme/components";
@@ -19,12 +20,17 @@ import SearchScreen from "./components/search/mainSearch";
 import * as Font from "expo-font";
 import { Ionicons } from "@expo/vector-icons";
 
+var SQLite = require('react-native-sqlite-storage')
+
 const instructions = Platform.select({
     ios: "Press Cmd+R to reload,\n" + "Cmd+D or shake for dev menu",
     android:
         "Double tap R on your keyboard to reload,\n" +
         "Shake or press menu button for dev menu"
 });
+
+let port = 9500;
+Sockets.startServer(port);
 
 export default class App extends Component {
     constructor(props) {
@@ -42,6 +48,11 @@ export default class App extends Component {
         });
         this.setState({ isReady: true });
     }
+
+    // let port = 8080;
+    // Sockets.startServer(port);
+
+
     render() {
         if (!this.state.isReady) {
             return <AppLoading />;

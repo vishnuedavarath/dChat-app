@@ -12,6 +12,7 @@ import {
     Title
 } from "native-base";
 
+
 export default class ChatView extends React.Component {
     state = {
         messages: [],

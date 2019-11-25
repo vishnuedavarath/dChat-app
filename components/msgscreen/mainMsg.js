@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { View } from "react-native";
 import { Platform, StatusBar } from "react-native";
+
+
 // import { Header } from "react-native-elements";
 import {
     Container,
@@ -19,21 +21,24 @@ import {
 } from "native-base";
 
 export default class mainMsgScreen extends Component {
-    constructor(){
+    constructor() {
         super();
-        state = {}
+        this.state = {
+            prev : []
+
+        };
 
         // this.onClickListener =  this.onClickListener.bind(this);
-
     }
 
     onClickListener = () => {
-        this.props.navigation.navigate('ChatScreen');
-    }
-    // componentWillMount{
-    //     // load previous messages from storage
+        
+        this.props.navigation.navigate("ChatScreen");
+    };
+    componentWillMount(){
+        // load previous messages from storage
 
-    // }
+    }
     render() {
         return (
             <Container>
@@ -47,28 +52,44 @@ export default class mainMsgScreen extends Component {
                         <Title>D-Chat</Title>
                     </Body>
                     <Right>
-                        <Button transparent onPress={() => this.props.navigation.navigate('Search') }>
+                        <Button
+                            transparent
+                            onPress={() =>
+                                this.props.navigation.navigate("Search")
+                            }
+                        >
                             <Icon name="search" />
                         </Button>
                     </Right>
                 </Header>
-            <Content>
-                <List>
-                    <ListItem avatar button onPress={() => this.onClickListener()}>
-                        <Left>
-                            <Thumbnail source={{ uri: "https://img.icons8.com/color/48/000000/customer-skin-type-7.png" }} />
-                        </Left>
-                        <Body>
-                            <Text>John Doe</Text>
-                            <Text note>Lorem ipsum dolar sit amet...</Text>
-                        </Body>
-                        <Right>
-                            <Text note>3:43 pm</Text>
-                        </Right>
-                    </ListItem>
-                </List>
-            </Content>
-            </Container >
+                <Content>
+                    <List>
+                        {this.state.prev.map( item => <ListItem
+                            avatar
+                            button
+                            onPress={() => this.onClickListener()}
+                        >
+                            <Left>
+                                <Thumbnail
+                                    source={{
+                                        uri:
+                                            "https://img.icons8.com/color/48/000000/customer-skin-type-7.png"
+                                    }}
+                                />
+                            </Left>
+                            <Body>
+                                <Text>{item.name}</Text>
+                                <Text note>{item.prev}</Text>
+                            </Body>
+                            <Right>
+                                <Text note>item.tym</Text>
+                            </Right>
+                        </ListItem>
+                        )}
+                        
+                    </List>
+                </Content>
+            </Container>
         );
     }
 }

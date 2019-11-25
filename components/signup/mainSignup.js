@@ -1,4 +1,13 @@
 import React, { Component } from "react";
+import uuid from "react-native-uuid";
+import { sha256 } from "react-native-sha256";
+import PouchDB from 'pouchdb-react-native';
+
+const db = new PouchDB('user')
+
+
+
+
 import {
     StyleSheet,
     Text,
@@ -13,17 +22,33 @@ import {
 export default class SignupView extends Component {
     constructor(props) {
         super(props);
-        state = {
+        this.state = {
             name: "",
             username: ""
         };
+
+        this.onClickListener = this.onClickListener.bind(this);
     }
 
     onClickListener = () => {
         // request to nameserver
         // returns whether username exists
-        // if don't exist, navigate 
-        this.props.navigation.navigate('Messages');
+        // if don't exist, navigate
+
+        const user = uuid.v4();
+        // sha256("John Doe").then(hash => {
+        //     // console.log(hash);
+        //     let userhash = hash;
+        // });
+        var doc = {
+            "_id": user,
+            "name": this.state.name,
+            "username": this.state.username,
+            "key" : "asfsdfsadf"
+          };
+          db.put(doc);
+
+        this.props.navigation.navigate("Messages");
     };
 
     render() {
@@ -42,7 +67,7 @@ export default class SignupView extends Component {
                         placeholder="Full Name"
                         keyboardType="default"
                         underlineColorAndroid="transparent"
-                        onChangeText={name => this.setState({ name })}
+                        onChangeText={name => this.setState({ name : name })}
                     />
                 </View>
 
@@ -59,13 +84,13 @@ export default class SignupView extends Component {
                         placeholder="Username"
                         keyboardType="default"
                         underlineColorAndroid="transparent"
-                        onChangeText={password => this.setState({ password })}
+                        onChangeText={username => this.setState({ username : username })}
                     />
                 </View>
 
                 <TouchableHighlight
                     style={[styles.buttonContainer, styles.loginButton]}
-                    onPress={() => this.onClickListener("signup")}
+                    onPress={() => this.onClickListener()}
                 >
                     <Text style={styles.loginText}>Sign Up</Text>
                 </TouchableHighlight>

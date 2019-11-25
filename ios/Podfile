@@ -41,4 +41,8 @@ target 'dChat' do
 
   pod 'RNPermissions', :path => '../node_modules/react-native-permissions'
 
+  pod 'RNSha256', :path => '../node_modules/react-native-sha256'
+
+  pod 'react-native-sqlite-storage', :path => '../node_modules/react-native-sqlite-storage'
+
 end
