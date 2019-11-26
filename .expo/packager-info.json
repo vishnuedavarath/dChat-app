@@ -1,10 +1,10 @@
 {
   "devToolsPort": 19002,
-  "expoServerPort": null,
-  "packagerPort": null,
-  "packagerPid": null,
-  "expoServerNgrokUrl": null,
-  "packagerNgrokUrl": null,
-  "ngrokPid": null,
+  "expoServerPort": 19000,
+  "packagerPort": 19001,
+  "packagerPid": 4546,
+  "expoServerNgrokUrl": "https://ku-958.anonymous.dchat.exp.direct",
+  "packagerNgrokUrl": "https://packager.ku-958.anonymous.dchat.exp.direct",
+  "ngrokPid": 4572,
   "webpackServerPort": null
 }

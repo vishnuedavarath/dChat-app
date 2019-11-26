@@ -64,7 +64,8 @@ export default class mainMsgScreen extends Component {
                 </Header>
                 <Content>
                     <List>
-                        {this.state.prev.map( item => <ListItem
+                        
+                    <ListItem
                             avatar
                             button
                             onPress={() => this.onClickListener()}
@@ -78,14 +79,13 @@ export default class mainMsgScreen extends Component {
                                 />
                             </Left>
                             <Body>
-                                <Text>{item.name}</Text>
-                                <Text note>{item.prev}</Text>
+                                <Text>John Doe</Text>
+                                <Text note>Hi There!</Text>
                             </Body>
                             <Right>
-                                <Text note>item.tym</Text>
+                                <Text note>3:45</Text>
                             </Right>
                         </ListItem>
-                        )}
                         
                     </List>
                 </Content>

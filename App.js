@@ -20,7 +20,7 @@ import SearchScreen from "./components/search/mainSearch";
 import * as Font from "expo-font";
 import { Ionicons } from "@expo/vector-icons";
 
-var SQLite = require('react-native-sqlite-storage')
+// var SQLite = require('react-native-sqlite-storage')
 
 const instructions = Platform.select({
     ios: "Press Cmd+R to reload,\n" + "Cmd+D or shake for dev menu",
@@ -29,8 +29,8 @@ const instructions = Platform.select({
         "Shake or press menu button for dev menu"
 });
 
-let port = 9500;
-Sockets.startServer(port);
+// let port = 9500;
+// Sockets.startServer(port);
 
 export default class App extends Component {
     constructor(props) {
